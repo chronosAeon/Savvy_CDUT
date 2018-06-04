@@ -1,0 +1,18 @@
+<!--pages/menu/menu.wxml-->
+<!-- <text>pages/menu/menu.wxml</text> -->
+ <!-- <icon_item brif='阅读' icon_src='/image/tab/yuedu.png'>
+</icon_item>  -->
+
+<view class="waveWrapper waveAnimation">
+	 <view class="waveWrapperInner bgBottom">
+		<view class="wave waveBottom" style="background-image: url('https://chronos.fzerolight.cn/static/wave-bot.png')"></view>
+	</view>  
+</view>
+ <view class='button_list' catchtap='getTap'>
+  <icon_list list_Objectarray="{{array_object}}">
+</icon_list>  
+</view> 
+ <view class='button_list' catchtap='getTap'>
+  <icon_list list_Objectarray="{{tools}}">
+</icon_list>  
+</view> 

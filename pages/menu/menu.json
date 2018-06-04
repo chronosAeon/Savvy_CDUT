@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "icon_item": "/components/icon_item/icon_item",
+    "icon_list":"/components/icon_list/icon_list"
+  }
+
+}

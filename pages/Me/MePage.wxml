@@ -1,0 +1,20 @@
+<view class="top" style='background:url(https://chronos.fzerolight.cn/static/about_me.jpg)'>
+  <view class="imgCon">
+    <image src="{{userInfo.avatarUrl}}"></image>
+  </view>
+  <view class="name">{{userInfo.nickName}}</view>
+</view>
+<view class="rowCon">
+  <view class="row" bindtap='about_we'>
+    <view class="row_text">关于我们</view>
+    <view class="arrows"></view>
+  </view>
+  <!-- <view class="row"> -->
+    <!-- <view class="row_l">
+      <image src="../../images/record.png"></image>
+    </view> -->
+    <!-- <view class="row_text">完成事项</view>
+    <view class="arrows"></view>
+  </view> -->
+  <!-- <button class='login_out' bindtap='out_login_tap'>退出绑定</button> -->
+</view>

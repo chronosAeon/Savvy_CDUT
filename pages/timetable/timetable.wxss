@@ -1,0 +1,123 @@
+/**index.wxss**/
+
+.flex-item {
+  width: 95rpx;
+  height: 100px;
+}
+
+.kcb-item {
+  position: absolute;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.smalltext {
+  font-size: 8pt;
+  color: #fff;
+  padding-left: 2px;
+  
+}
+
+.top {
+  display: flex;
+  flex-direction: row;
+  margin-left: 35rpx;
+  background-color: #d2e6b3;
+  color: #7cba23;
+}
+
+.top-text {
+  width: 100rpx;
+  height: 35rpx;
+  font-size: 9pt;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.top-today-text {
+  width: 100rpx;
+  height: 35rpx;
+  font-size: 9pt;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  color:  #F4606C
+}
+
+.scroll {
+  height: 1150rpx;
+  z-index: 101;
+  position: fixed;
+}
+
+.left {
+  width: 35rpx;
+  height: 100rpx;
+  font-size: 9pt;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+.class_container {
+  margin-left: 5rpx;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  /* flex:1; */
+}
+
+.class_img {
+  margin: 0rpx;
+  height: 100rpx;
+  /* background-size:cover; */
+  /*contain就会缩小放大图片  */
+  /* background-color: yellow; */
+  border-radius: 15rpx;
+  width: 100rpx
+}
+
+.class_text {
+  position: relative;
+  top:40rpx;
+  text-align: center;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  font-size: 30rpx;
+}
+.week_list{
+  display: flex;
+  flex-direction: row;
+}
+.week_select{
+  height: 100rpx;
+}
+.recommend_scroll_x_box {
+  height: 100rpx;
+  white-space: nowrap;
+  display: flex;
+  /* margin-left: 35rpx */
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+.recommend_hot_box {
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 4rpx;
+  margin-left: 0rpx;
+  display: inline-block;
+}
+
+.recommend_hot_image {
+  width: 100rpx;
+  height: 100rpx;
+}

@@ -1,0 +1,36 @@
+{
+  "pages": [
+    
+    "pages/LoginPage/LoginPage",
+    "pages/menu/menu",
+    "pages/GPAPage/GPAPage",
+    "pages/BookBorrowPage/BookBorrowPage",
+    "pages/timetable/timetable",
+    "pages/BookDetail/BookDetail",
+    "pages/Me/MePage",
+    "pages/Me/about_we/about_wePage"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "We成理",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/menu/menu",
+        "text": "we成理",
+        "iconPath": "image/tab/W_default.png",
+        "selectedIconPath": "image/tab/W_skyblue.png"
+      },
+      {
+        "pagePath": "pages/Me/MePage",
+        "text": "Me",
+        "iconPath": "image/tab/M_default.png",
+        "selectedIconPath": "image/tab/M_skyblue.png"
+      }
+    ]
+  }
+}
