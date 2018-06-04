@@ -1,0 +1,127 @@
+.cloud {
+  position: absolute;
+  z-index: 3;
+  width:99px;height:64px; top: 0;
+  right: 0;
+  bottom: 0;
+  animation: cloud 5s linear infinite;
+}
+ 
+@keyframes cloud {
+  from {
+    transform: translate3d(-125rpx, 0, 0);
+  }
+ 
+  to {
+    transform: translate3d(180rpx, 0, 0);
+  }
+}
+@keyframes pic {
+  0% {
+    transform: translate3d(0, 20rpx, 0) rotate(-15deg);
+  }
+  15% {
+    transform: translate3d(0, 0rpx, 0) rotate(25deg);
+  }
+  36% {
+    transform: translate3d(0, -20rpx, 0) rotate(-20deg);
+  }
+  50% {
+    transform: translate3d(0, -10rpx, 0) rotate(15deg);
+  }
+  68% {
+    transform: translate3d(0, 10rpx, 0) rotate(-25deg);
+  }
+  85% {
+    transform: translate3d(0, 15rpx, 0) rotate(15deg);
+  }
+  100% {
+    transform: translate3d(0, 20rpx, 0) rotate(-15deg);
+  }
+}
+/* #container{
+     background: url("https://chronos.fzerolight.cn/static/login_bg.jpg") no-repeat ;
+     height: 100%; 
+      /* set background tensile   */
+     /* width: 100%;  */
+     /* background-size: 100% 100%;  */
+    /* -moz-background-size: 100% 100%; */
+    /* margin-right: auto;
+    padding: 0; */
+/* } */
+page{  
+  height: 100%;  
+}  
+  
+.container {  
+  height: 100%;  
+  display: flex;  
+  flex-direction: column;  
+  padding: 0;  
+  box-sizing: border-box;  
+  background-color: #f2f2f2  
+}   
+  
+/*登录图片*/  
+.login-icon{  
+  flex: none;  
+}  
+.login-img{  
+  width: 750rpx;  
+}  
+  
+/*表单内容*/  
+.login-from {  
+  margin-top: 20px;  
+  flex: auto;  
+  height:100%;  
+}  
+  
+.inputView {  
+  background-color: #fff;  
+  line-height: 44px;  
+  /* border: solid 5rpx skyblue;
+  border-radius: 20rpx; */
+}  
+/*输入框*/  
+.nameImage, .keyImage {  
+  margin-left: 22px;  
+  width: 14px;  
+  height: 14px  
+}  
+  
+.loginLab {  
+  margin: 15px 15px 15px 10px;  
+  color: #545454;  
+  font-size: 14px  
+}  
+.inputText {  
+  flex: block;  
+  float: right;  
+  text-align: right;  
+  margin-right: 22px;  
+  margin-top: 11px;  
+  color: #cccccc;  
+  font-size: 14px  
+}  
+  
+ .line { 
+ 
+  height: 1px;  
+  background-color: #cccccc;  
+  margin-top: 1px;  
+}   
+/*按钮*/  
+.loginBtnView {  
+  width: 100%;  
+  height: auto;  
+  background-color: #f2f2f2;  
+  margin-top: 0px;  
+  margin-bottom: 0px;  
+  padding-bottom: 0px;  
+}  
+  
+.loginBtn {  
+  width: 80%;  
+  margin-top: 35px;  
+}  

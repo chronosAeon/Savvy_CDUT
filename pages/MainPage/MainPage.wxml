@@ -1,0 +1,49 @@
+<import src='/pages/MainPage/class_item_group/class_item_group.wxml' />
+
+<view class='container' style='background-image: url({{back_groundImg}})'>
+  <view class='pickers'>
+    <view class="section">
+      <view class="section__title">学期选一下哟</view>
+      <picker bindchange="bindTermChange" value="{{term_index}}" range="{{term_array}}">
+        <view class="picker">
+          当前选择：{{term_array[term_index]}}
+        </view>
+      </picker>
+    </view>
+    <view class="section">
+      <view class="section__title">第几周选一下哟</view>
+      <picker bindchange="bindWeekChange" value="{{week_index}}" range="{{week_array}}">
+        <view class="picker">
+          当前选择：{{week_array[week_index]}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class='Schedule_container'>
+    <view class='Schedule'>
+      <template is="item_list" data="{{a_day_data:class_data[0]}}" />
+    </view>
+    <view class='Schedule'>
+      <template is="item_list" data="{{a_day_data:class_data[1]}}" />
+    </view>
+    <view class='Schedule'>
+      <template is="item_list" data="{{a_day_data:class_data[2]}}" />
+    </view>
+    <view class='Schedule'>
+      <template is="item_list" data="{{a_day_data:class_data[3]}}" />
+    </view>
+    <view class='Schedule'>
+      <template is="item_list" data="{{a_day_data:class_data[4]}}" />
+    </view>
+    <view class='Schedule'>
+      <template is="item_list" data="{{a_day_data:class_data[5]}}" />
+    </view>
+    <view class='Schedule'>
+      <template is="item_list" data="{{a_day_data:class_data[6]}}" />
+    </view>
+  </view>
+  <view class='button_section'>
+    <button class='submit_button' bindtap='fresh'>
+      <text class='button_text'>Dva爱你哟(刷新)</text> </button>
+  </view>
+</view>

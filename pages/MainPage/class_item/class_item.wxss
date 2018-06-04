@@ -1,0 +1,29 @@
+.class_container {
+  margin-left: 5rpx;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  /* flex:1; */
+}
+
+.class_img {
+  margin: 0rpx;
+  height: 200rpx;
+  background-size:cover;
+  /*contain就会缩小放大图片  */
+  /* background-color: yellow; */
+  border-radius: 15rpx;
+  width: 100rpx
+}
+
+.class_text {
+  position: relative;
+  top:40rpx;
+  text-align: center;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  font-size: 30rpx;
+}

@@ -1,0 +1,6 @@
+@import '/pages/GPAPage/score_item/score_item.wxss';
+.list{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}

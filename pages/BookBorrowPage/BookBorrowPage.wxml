@@ -1,0 +1,27 @@
+<view>
+  <view class='row_title'>
+    <text class='row_title_t'>书名</text>
+    <input placeholder="输入你想寻找的书名" class='row_title_i' bindinput='inputBookName'></input>
+    <icon type='search' class='row_title_icon' catchtap='searchBook'></icon>
+  </view>
+  
+  <view hidden="{{textView}}" style='background-image:url({{a}}) '>
+    <view class='searchText'>搜索结果如下</view>
+    <view class='searchResult titleSize'>
+      <view class='bookName'>书名</view>
+       <view class='writer'>作者</view>
+      <view class='searchNum'>索书号</view>
+      <view class='publish'>出版信息</view> 
+    </view>
+    <block wx:for="{{bookList}}">
+        <view class='searchResult listSize'catchtap='navigateto'>
+        <view class='bookName'  data-Detail_url='{{item.detail_url}}'>{{item.name}}</view>
+         <view class='writer' data-Detail_url='{{item.detail_url}}'>{{item.author}}</view>
+        <view class='searchNum' data-Detail_url='{{item.detail_url}}'>{{item.index_num}}</view>
+        <view class='publish'data-Detail_url='{{item.detail_url}}'>{{item.public_info}}</view> 
+      </view> 
+    </block>
+  </view>
+</view>
+
+

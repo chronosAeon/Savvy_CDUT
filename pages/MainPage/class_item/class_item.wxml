@@ -1,0 +1,7 @@
+<template name="class_item">
+  <view class='class_container' catchtap='class_tap' data-id='{{classId}}'>
+    <view class='class_img' style="background-image: url({{classImg}})">
+      <text class='class_text'>{{classContent_text}}</text>
+    </view>
+  </view>
+</template>

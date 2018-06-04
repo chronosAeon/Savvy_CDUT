@@ -1,0 +1,54 @@
+@keyframes myfirst
+{
+    0%   {background: red; left:0px; top:0px;}
+    25%  {background: yellow; left:200px; top:0px;}
+    50%  {background: blue; left:200px; top:200px;}
+    75%  {background: green; left:0px; top:200px;}
+    100% {background: red; left:0px; top:0px;}
+}
+@keyframes wave {
+    0% {
+        transform: translateX(0) translateZ(0) translateY(0)
+    }
+    17%{
+        transform: translateX(-1%) translateZ(0) translateY(4%)
+    }
+    35%{
+        transform: translateX(1%) translateZ(0) translateY(-2%)
+    }
+    50% {
+        transform: translateX(-1%) translateZ(0) translateY(0%)
+    }
+    67%{
+        transform: translateX(0%) translateZ(0) translateY(-4%)
+    }
+    84%{
+        transform: translateX(1%) translateZ(0) translateY(-2%)
+    }
+    100% {
+        transform: translateX(0) translateZ(0) translateY(0)
+    }
+    
+}
+.card {
+  width: 100rpx;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  border: solid 2rpx blue ;
+  border-radius: 20rpx;
+  margin-left: 20rpx;
+  animation:wave 8s infinite;
+}
+
+.icon {
+  width: inherit;
+  height: 100rpx;
+}
+
+.brif {
+  height: 50rpx;
+  text-align: center;
+  margin-top: -10rpx;
+  color: black;
+}

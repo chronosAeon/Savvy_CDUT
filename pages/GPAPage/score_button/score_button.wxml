@@ -1,0 +1,7 @@
+<template name="score_button">
+  <view class='score_container' catchtap='score_tap'>
+    <view class='score_img' style="background-image: url({{scoreImg}})">
+      <text class='score_text'>{{scoreContent_text}}</text>
+    </view>
+  </view>
+</template>

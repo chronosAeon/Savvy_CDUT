@@ -1,0 +1,2 @@
+<!--pages/CommunicationPage/CommunicationPage.wxml-->
+<map id="map" longitude="104.13991928100586" latitude="30.6748018738967" scale="20" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location style="width: 100%; height: 300px;"></map>

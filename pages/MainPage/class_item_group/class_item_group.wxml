@@ -1,0 +1,13 @@
+<import src='/pages/MainPage/class_item/class_item.wxml' />
+<template name='item_list'>
+  <view class='group_container'>
+    <block wx:for="{{a_day_data}}" wx:key="{{*this}}" wx:for-item="item" wx:for-index="index">
+      <block wx:if="{{index!=4}}">
+        <template is='class_item' data="{{...item}}" />
+      </block>
+      <block wx:else>
+        <template is='class_item' />
+      </block>
+    </block>
+  </view>
+</template>

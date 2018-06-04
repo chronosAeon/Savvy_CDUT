@@ -1,0 +1,8 @@
+<import src='/pages/GPAPage/score_button/score_button.wxml' />
+<template name='score_item'>
+  <view class='item'>
+    <template is='score_button' data='{{scoreContent_text:class_item.name}}' />
+    <template is='score_button' data='{{scoreContent_text:class_item.credit}}' />
+    <template is='score_button' data='{{scoreContent_text:class_item.score}}' />
+  </view>
+</template>

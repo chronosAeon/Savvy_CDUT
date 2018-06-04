@@ -1,0 +1,9 @@
+<import src='/pages/GPAPage/score_item/score_item.wxml' />
+<template name='score_list'>
+  <view class='list'>
+  <block wx:for="{{class_list}}" wx:key="{{*this}}" wx:for-item="item" wx:for-index="index">
+    <template is='score_item' data='{{class_item:class_list[index]}}'
+    />
+  </block>
+  </view>
+</template>

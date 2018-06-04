@@ -1,0 +1,7 @@
+@import '/pages/MainPage/class_item/class_item.wxss';
+.group_container{
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}

@@ -1,0 +1,4 @@
+@import '/pages/GPAPage/score_list/score_list.wxss';
+.GPA{
+  margin-left: 40%;
+}

@@ -1,0 +1,5 @@
+<view class='card_list'>
+  <block wx:for='{{list_Objectarray}}'wx:for-item="item" >
+    <icon_item brif='{{item.brif}}' icon_src='{{item.src}}' func_index='{{item.func_index}}'></icon_item>
+  </block>
+</view>

@@ -1,0 +1,9 @@
+<view class='container' style='background:url(https://pic4.zhimg.com/80/v2-160b3e0e1dc1e5c4a22b48b9bdd6dbe6_hd.jpg)'> 
+  <text>书名：{{name}}</text>
+  <text>作者(翻译)：{{author}}</text>
+  <text>信息：{{book.info}}</text> 
+  <text>语言：{{language}}</text>
+  <text>页数：{{pages}}</text>
+  <text>价格：{{book.price}}</text>
+  <text>出版信息：{{book.publicity}}</text>
+</view>

@@ -1,0 +1,5 @@
+<view bindtap='icon_click' class='card' >
+<!-- data-cardId='okok' -->
+  <image class='icon' src='{{icon_src}}'></image>
+  <text class='brif'>{{brif}}</text>
+</view>

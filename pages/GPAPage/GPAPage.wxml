@@ -1,0 +1,7 @@
+<import src='/pages/GPAPage/score_list/score_list.wxml' />
+<import src='/pages/GPAPage/score_item/score_item.wxml' />
+<view >
+<text class='GPA'>GPA:{{GPA}}</text>
+<template is='score_item'data='{{class_item:class_title}}'/>
+<template is='score_list' data='{{class_list:class_list}}'/>
+</view>
