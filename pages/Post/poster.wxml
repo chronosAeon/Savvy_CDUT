@@ -1,0 +1,2 @@
+<!--pages/Post/poster.wxml-->
+<image mode='widthFix' style='width:100%' src='/image/books.png'></image>

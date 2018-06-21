@@ -24,7 +24,7 @@ Page({
       //显示状态再触发
       if (this.data.select_week_index!=null) {
         var select_week = this.data.select_week_index + 1
-        console.log(select_week)
+        // console.log(select_week)
         wx.setNavigationBarTitle({
           title: '第' + select_week + '周',
         })
@@ -51,7 +51,25 @@ Page({
       })
     }
   },
+  check_version() {
+    const updateManager = wx.getUpdateManager()
+
+    updateManager.onUpdateReady(function () {
+      wx.showModal({
+        title: '更新提示',
+        content: '新版本已经准备好，是否重启应用？',
+        success: function (res) {
+          if (res.confirm) {
+            // 新的版本已经下载好，调用 applyUpdate 应用新版本并重启
+            updateManager.applyUpdate()
+          }
+        }
+      })
+
+    })
+  },
   onLoad: function () {
+    this.check_version()
     var plateform = 'ios'
     try {
       var res = wx.getSystemInfoSync()
@@ -59,8 +77,8 @@ Page({
       console.log(res.pixelRatio)
       console.log(res.windowWidth)
       console.log(res.windowHeight)
-      console.log(res.language)
-      console.log(res.version)
+      // console.log(res.language)
+      // console.log(res.version)
       console.log(res.platform)
       // console.log(res.platform)
       plateform = res.platform
@@ -68,8 +86,8 @@ Page({
       // Do something when catch error
       plateform = 'android'
     }
-    if (plateform == 'ios') {
-      console.log('ios万岁')
+    if (plateform == 'ios' || plateform == 'devtools') {
+      // console.log('ios万岁')
       this.setData({
         uppertrigger: -125,
         lowertrigger: -125
@@ -81,7 +99,6 @@ Page({
         lowertrigger: -5
       })
     }
-    console.log('onLoad')
     var start_year = app.globalData.userAccount.substring(0, 4)
     var now_year = parseInt(util.formatTime(new Date()).substring(0, 4))
     var month = parseInt(util.formatTime(new Date()).substring(5, 7))
@@ -106,14 +123,19 @@ Page({
       semester: semester
     })
     var default_year = parseInt(util.formatTime(new Date()).substring(0, 4)) - 1
-    // console.log(now_year)
     wx.request({
       // url: app.globalData.web_server + 'curriculum/' + app.globalData.userAccount + '/' + app.globalData.userPassword + '/' + '2015' + '01',
-      url: app.globalData.web_server + 'curriculum/' + app.globalData.userAccount + '/' + app.globalData.userPassword + '/' + semester,
+      url: app.globalData.web_server + 'curriculum',
+      method: 'POST',
+      data: {
+        "stu_number": app.globalData.userAccount,
+        "password": app.globalData.userPassword,
+        "semester":this.data.semester 
+      },
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
       success: res => {
-        // console.log(res.data['class_timetable'])
-        var time_table = JSON.parse(res.data['class_timetable'])
-        var total_week = JSON.parse(res.data['class_classTime_array']).length
+        var time_table = JSON.parse(JSON.parse(res.data)['class_timetable'])
+        var total_week = JSON.parse(JSON.parse(res.data)['class_classTime_array']).length
         var week_array = new Array()
         for (var g = 1; g <= total_week; g++) {
           week_array.push(g)
@@ -122,7 +144,8 @@ Page({
           time_table: time_table,
           total_week_array: week_array
         })
-        var current_week = this.which_week(JSON.parse(res.data['class_classTime_array'])) + 1
+        var current_week = this.which_week(JSON.parse(JSON.parse(res.data)['class_classTime_array'])) + 1
+        // var current_week = this.which_week(JSON.parse(res.data['class_classTime_array'])) + 1
         var view_current = new Array();
         view_current.push(current_week - 1)
         this.setData({
@@ -131,11 +154,8 @@ Page({
         wx.setNavigationBarTitle({
           title: '第' + current_week + '周',
         })
-        var current_day = this.which_day(JSON.parse(res.data['class_classTime_array']), current_week)
-        // console.log(current_day)
-        // var re = new RegExp('(.*)')
-        var class_detail_array = JSON.parse(res.data.class_array_detail)
-        // console.log(this.refined_all_title(class_detail_array))
+        var current_day = this.which_day(JSON.parse(JSON.parse(res.data)['class_classTime_array']), current_week)
+        var class_detail_array = JSON.parse(JSON.parse(res.data)['class_array_detail'])
         var detail_titles = this.refined_all_title(class_detail_array)
 
         //
@@ -165,8 +185,8 @@ Page({
         for (var i = 0; i < 7; i++) {
           this.refinded_day_data(time_table[current_week-1][i], i + 1)
         }
-        console.log(current_week)
-        console.log(this.data.wlist)
+        // console.log(current_week)
+        // console.log(this.data.wlist)
       }
     })
   },
@@ -221,7 +241,7 @@ Page({
   which_week: function (class_titles) {
     var current_month = this.data.current_month
     var current_day = this.data.current_day
-    console.log(current_day)
+    // console.log(current_day)
     var all_ranges = new Array()
     for (var i = 0; i < class_titles.length; i++) {
       var a_range = new Array()
@@ -236,7 +256,7 @@ Page({
       // console.log(start_date)
       all_ranges.push(a_range)
     }
-    console.log(all_ranges)
+    // console.log(all_ranges)
     for (var j = 0; j < all_ranges.length; j++) {
       // 这里要区别是同月还是不同月
       if (all_ranges[j][0][0] == all_ranges[j][1][0] && all_ranges[j][0][0] == current_month) {
@@ -278,7 +298,7 @@ Page({
   which_day: function (class_titles, current_week) {
     var current_month = this.data.current_month
     var current_day = this.data.current_day
-    console.log(current_day)
+    // console.log(current_day)
     var all_ranges = new Array()
     for (var i = 0; i < class_titles.length; i++) {
       var a_range = new Array()
@@ -370,7 +390,7 @@ Page({
     this.setData({
       wlist: array
     })
-    console.log(a_day_array)
+    // console.log(a_day_array)
   },
   check_connect_class: function (a_day_array) {
     for (var i = 1; i < a_day_array.length; i++) {
@@ -383,15 +403,23 @@ Page({
     return a_day_array
   },
   refresh: function (e) {
-    console.log('ok')
+    // console.log('ok')
     wx.showNavigationBarLoading()
     wx.showLoading({
       title: '加载中',
     })
     wx.request({
-      url: app.globalData.web_server + 'curriculum/' + app.globalData.userAccount + '/' + app.globalData.userPassword + '/' + this.data.semester,
+      url: app.globalData.web_server + 'curriculum',
+      method: 'POST',
+      data: {
+        "stu_number": app.globalData.userAccount,
+        "password": app.globalData.userPassword,
+        "semester": this.data.semester,
+        "isfresh":true
+      },
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
       success: res => {
-        var time_table = JSON.parse(res.data['class_timetable'])
+        var time_table = JSON.parse(JSON.parse(res.data)['class_timetable'])
         wx: wx.hideLoading();
         wx.hideNavigationBarLoading()
         wx.showToast({
@@ -403,6 +431,7 @@ Page({
         })
         var view_current = new Array();
         view_current.push(this.data.current_week - 1)
+        console.log(view_current)
         this.setData({
           week_select_current: view_current
         })
@@ -410,15 +439,15 @@ Page({
           title: '第' + this.data.current_week + '周',
         })
         for (var i = 0; i < 7; i++) {
-          this.refinded_day_data(time_table[this.data.current_week][i], i + 1)
+          this.refinded_day_data(time_table[this.data.current_week-1][i], i + 1)
         }
-        console.log(res)
+        // console.log(res)
       }
     })
   },
   bindChange: function (e) {
     const val = e.detail.value[0]
-    console.log(val)
+    // console.log(val)
     this.setData({
       select_week_index: val
     })

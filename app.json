@@ -1,14 +1,16 @@
 {
   "pages": [
-    
+    "pages/Post/poster",
     "pages/LoginPage/LoginPage",
+    "pages/Me/MePage",
     "pages/menu/menu",
     "pages/GPAPage/GPAPage",
     "pages/BookBorrowPage/BookBorrowPage",
     "pages/timetable/timetable",
     "pages/BookDetail/BookDetail",
-    "pages/Me/MePage",
-    "pages/Me/about_we/about_wePage"
+    "pages/Me/about_we/about_wePage",
+    "pages/map/map",
+    "pages/emptyClassRoom/EmptyClassRoom"
   ],
   "window": {
     "backgroundTextStyle": "light",

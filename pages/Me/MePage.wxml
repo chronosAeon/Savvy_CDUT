@@ -1,20 +1,26 @@
 <view class="top" style='background:url(https://chronos.fzerolight.cn/static/about_me.jpg)'>
+
+
   <view class="imgCon">
-    <image src="{{userInfo.avatarUrl}}"></image>
+    <view wx:if='{{avatarUrl?true:false}}'>
+      <!-- <image src="/image/cv_sarth.jpg"></image> -->
+      <image src="{{avatarUrl}}" mode='aspectFill'></image>
+      
+    </view>
+    <view wx:else>
+      <button open-type='getUserInfo' bindgetuserinfo='get_user_info'>授权信息</button>
+    </view>
   </view>
-  <view class="name">{{userInfo.nickName}}</view>
-</view>
-<view class="rowCon">
-  <view class="row" bindtap='about_we'>
-    <view class="row_text">关于我们</view>
-    <view class="arrows"></view>
+  <view class=" name ">{{name?name:''}}</view>
+
+  <view class="rowCon ">
+    <view class="row " bindtap='about_we'>
+      <view class="row_text ">关于我们</view>
+      <view class="arrows "></view>
+    </view>
+    <view class="row " bindtap='quit'>
+      <view class="row_text ">退出绑定</view>
+      <view class="arrows "></view>
+    </view>
   </view>
-  <!-- <view class="row"> -->
-    <!-- <view class="row_l">
-      <image src="../../images/record.png"></image>
-    </view> -->
-    <!-- <view class="row_text">完成事项</view>
-    <view class="arrows"></view>
-  </view> -->
-  <!-- <button class='login_out' bindtap='out_login_tap'>退出绑定</button> -->
 </view>

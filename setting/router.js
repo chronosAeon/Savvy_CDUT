@@ -10,11 +10,11 @@ var router = {
     page_kind:'navigate'
   },
   "2":{
-    url:'/pages/MetroCardPage/MetroCardPage',
+    url:'/pages/map/map',
     page_kind:'navigate'
   },
  "3": {
-   url: '/pages/AnnouncementPage/AnnouncementPage',
+   url: '/pages/emptyClassRoom/EmptyClassRoom',
     page_kind: 'navigate'
   },
  "4": {

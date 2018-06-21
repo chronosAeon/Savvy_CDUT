@@ -16,8 +16,13 @@ Page({
    */
   onLoad: function (options) {
     wx.request({
-      url: app.globalData.web_server+'GPA'+'/'+ app.globalData.userAccount + '/' + app.globalData.userPassword,
-      // url: 'http://140.143.91.27:8080/GPA/201505090215/510104199705243179',
+      url: app.globalData.web_server+'GPA',
+      method: 'POST',
+      data: {
+        "account": app.globalData.userAccount,
+        "password": app.globalData.userPassword
+      },
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
       success: res => {
         console.log(res.data.GPA)
         var GPA_string = res.data.GPA.toString()

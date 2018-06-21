@@ -1,0 +1,2 @@
+<!--pages/map/ma p.wxml-->
+<map style='width:100%;height:800rpx' longitude='{{current_longi}}' latitude='{{current_lati}}'  markers="{{markers}}" show-location='true' bindmarkertap='markerTap' bindtap='mapTap' circles='{{circles}}'></map>

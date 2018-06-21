@@ -1,7 +1,7 @@
 .top {
   padding-top: 80rpx;
   /* background-color:rgb(54, 207, 254); */
-  background-image: 'https://chronos.fzerolight.cn/static/about_me.jpg'
+  /* background-image: 'https://chronos.fzerolight.cn/static/about_me.jpg' */
 }
 
 .imgCon {
@@ -13,11 +13,15 @@
   background-color: #ccc;
   margin: 0 auto 20rpx;
 }
-
+ 
 .imgCon image {
-  width: 100%;
-  height: 100%;
-}
+  width: 160rpx;
+  height: 160rpx;
+} 
+.imgCon button {
+  width: 160rpx;
+  height: 160rpx;
+} 
 
 .name {
   text-align: center;

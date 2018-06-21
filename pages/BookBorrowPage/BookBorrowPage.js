@@ -86,12 +86,12 @@ Page({
     var booklist = [];
     //请求数据
     wx: wx.request({
-      url: app.globalData.web_server+'BookList?book_name=' + this.data.bookName,
-      data: '',
-      header: {},
-      method: 'GET',
-      // dataType: 'json',
-      // responseType: 'text',
+      url: app.globalData.web_server+'BookList',
+      method: 'POST',
+      data: {
+        "book_name": this.data.bookName
+      },
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
       success: function (res) {
         if (res.data != 'noParam'&&res.statusCode!=500) {
           console.log(res);

@@ -24,12 +24,12 @@ Page({
       title: '正在为您跑遍图书馆',
     })
     wx: wx.request({
-      url: app.globalData.web_server+'BookDetail?bookdetail_url=' + detail_url,
-      data: '',
-      header: {},
-      method: 'GET',
-      dataType: 'json',
-      responseType: 'text',
+      url: app.globalData.web_server+'BookDetail',
+      method: 'POST',
+      data: {
+        "bookdetail_url": detail_url
+      },
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
       success: function (res) {
         wx.hideLoading()
         if (res.statusCode != 500) {

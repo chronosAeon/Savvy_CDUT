@@ -1,0 +1,93 @@
+.header{
+  display: flex;
+  flex-direction: row;
+  background-color: rgb(235, 241, 246);
+  height: 100rpx;
+  font-size: 33rpx;
+}
+.rowbuilding{
+  float:right;
+  width:15rpx;
+  height:15rpx;
+  border-style:solid;
+  border-width:2rpx;
+  border-color:transparent transparent red red;
+  transform:rotate(-45deg);
+  margin: auto 0;
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+}
+.header-text{
+  margin: auto 0;
+  margin-left: 20rpx;
+}
+.header-time{
+  margin: auto 0;
+  margin-left: 40rpx;
+}
+.serchicon{
+  margin: auto 0;
+  margin-left: 30rpx;
+  
+}
+.showroom{
+  margin-top: 20rpx;
+  background-color: white;
+}
+.room{
+  display: flex;
+  flex-direction: row;
+  font-size: 30rpx;
+  border-bottom: 3rpx solid #3f6;
+  height: 70rpx;
+  margin-top: 10rpx;
+}
+.room1{
+  display: flex;
+  flex-direction: row;
+  color: rgb(68, 68, 68) ;
+  font-size: 30rpx;
+  font-weight: bold;
+  height: 80rpx;
+  border-bottom: 5rpx solid #3f6;
+  background-color:rgb(249, 249, 249);
+
+}
+.v0{
+  width: 140rpx;
+  text-align: center;
+  margin: auto 0;
+}
+.v1{
+  width: 110rpx;
+  text-align: center;
+  margin: auto 0;
+  margin-left: 55rpx;
+}
+.v2{
+  width: 80rpx;
+  text-align: center;
+  margin: auto 0;
+  color:#030;
+}
+.v3{
+  width: 80rpx;
+  color:white;
+  text-align: center;
+  margin: auto 0;
+}
+.time{
+  display: flex;
+  flex-direction: row;
+  margin: 10rpx 0;
+  border-radius: 3%;
+  background-color: rgb(139, 197, 255);
+  margin-left: 40rpx;
+
+}
+.time1{
+  display: flex;
+  flex-direction: row;
+  margin-left: 40rpx;
+}
+

@@ -9,7 +9,8 @@ Page({
     array_object: [
       { brif: '课表', src: '/image/icons/class_inform.png', func_index: '0' },
       { brif: '成绩', src: '/image/icons/GPA.png', func_index: '1' },
-      // { brif: '教室', src: '/image/icons/classroom.png', func_index: '2' },
+      { brif: '教室', src: '/image/icons/classroom.png', func_index: '3' },
+      { brif: '地图', src: '/image/icons/Location.png', func_index: '2' },
       // { brif: '公告', src: '/image/icons/announcement.png', func_index: '3' },
       // { brif: '招领', src: '/image/icons/lost_found.png', func_index: '4' },
       { brif: '借阅', src: '/image/icons/book_borrow.png', func_index: '5' }],
@@ -19,7 +20,7 @@ Page({
     //   { brif: '住宿', src: '/image/icons/hotel.png', func_index: '8' },
     //   { brif: '火车', src: '/image/icons/train.png', func_index: '9' },
     //   { brif: '旅游', src: '/image/icons/view.png', func_index: '10' },
-    //   { brif: '定位', src: '/image/icons/Location.png', func_index: '11' }]
+     
   },
 
   /**
